@@ -130,12 +130,14 @@ def savedata():
     _designation = request.form['designation']
     _company = request.form['company']
 
-    sql = "INSERT INTO register(Name, Email, Designation, Company) VALUES('{}', '{}', '{}', '{}')".format(_name, _email, _designation, _company)
-    connection = pyodbc.connect('Driver={SQL Server};Server=dcdappserver.database.windows.net;Database=dicodingdb;uid=dicoding;pwd=Arya1234')
-    cursor = connection.cursor()
-    cursor.execute(sql)
-    connection.commit()
-    connection.close()
+#     sql = "INSERT INTO register(Name, Email, Designation, Company) VALUES('{}', '{}', '{}', '{}')".format(_name, _email, _designation, _company)
+#     connection = pyodbc.connect('Driver={SQL Server};Server=dcdappserver.database.windows.net;Database=dicodingdb;uid=dicoding;pwd=Arya1234')
+#     cursor = connection.cursor()
+#     cursor.execute(sql)
+#     connection.commit()
+#     connection.close()
 
-    return redirect("https://dcdsubmission1.azurewebsites.net/", code=302)
+ #   return redirect("https://dcdsubmission1.azurewebsites.net/", code=302)
+    return Response(response = _name, status = 200, mimetype = "text/plain")
+
 
