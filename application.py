@@ -116,17 +116,15 @@ def show():
     </body>
     </HTML>""" 
     connection = pyodbc.connect('DRIVER='+driver+';SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password)
-#    pyodbc.connect('DRIVER={FreeTDS};Server=dcdappserver.database.windows.net;Database=dicodingdb;UID=dicoding;PWD=Arya1234;TDS_Version=8.0;Port=1433;')
-#     connection = pyodbc.connect('Driver={SQL Server};Server=dcdappserver.database.windows.net;Database=dicodingdb;uid=dicoding;pwd=Arya1234')
-#     cursor = connection.cursor()
-#     cursor.execute("SELECT * FROM dbo.register")
-#     data = cursor.fetchall()  
-#     items = data
-#     tr = "<tr>{0}</tr>"
-#     td = "<td>{0}</td>"
-#     subitems = [tr.format(''.join([td.format(a) for a in item])) for item in items]
-#     result = html.format("".join(subitems)) # or write, whichever
-#     connection.close()
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM dbo.register")
+    data = cursor.fetchall()  
+    items = data
+    tr = "<tr>{0}</tr>"
+    td = "<td>{0}</td>"
+    subitems = [tr.format(''.join([td.format(a) for a in item])) for item in items]
+    result = html.format("".join(subitems)) # or write, whichever
+    connection.close()
 
     return Response(response = html, status = 200, mimetype = "text/html")
 
