@@ -109,8 +109,8 @@ def show():
         </script>
     </body>
     </HTML>""" 
-    pyodbc.connect('DRIVER={FreeTDS};Server=dcdappserver.database.windows.net;Database=dicodingdb;UID=dicoding;PWD=Arya1234;TDS_Version=8.0;Port=1433;')
-#     connection = pyodbc.connect('Driver={SQL Server};Server=dcdappserver.database.windows.net;Database=dicodingdb;uid=dicoding;pwd=Arya1234')
+#    pyodbc.connect('DRIVER={FreeTDS};Server=dcdappserver.database.windows.net;Database=dicodingdb;UID=dicoding;PWD=Arya1234;TDS_Version=8.0;Port=1433;')
+     connection = pyodbc.connect('Driver={SQL Server};Server=dcdappserver.database.windows.net;Database=dicodingdb;uid=dicoding;pwd=Arya1234')
 #     cursor = connection.cursor()
 #     cursor.execute("SELECT * FROM dbo.register")
 #     data = cursor.fetchall()  
