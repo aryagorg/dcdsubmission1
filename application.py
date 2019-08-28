@@ -126,7 +126,7 @@ def show():
     result = html.format("".join(subitems)) # or write, whichever
     connection.close()
 
-    return Response(response = html, status = 200, mimetype = "text/html")
+    return Response(response = result, status = 200, mimetype = "text/html")
 
 @app.route('/doform', methods=['POST'])
 def savedata():
