@@ -96,6 +96,7 @@ def show():
         <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
+                <th>No</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Designation</th>
@@ -142,7 +143,7 @@ def savedata():
     connection.commit()
     connection.close()
 
-    return redirect("https://dcdsubmission1.azurewebsites.net/", code=302)
+    return redirect("https://dcdsub1.azurewebsites.net/", code=302)
     #return Response(response = _name, status = 200, mimetype = "text/plain")
 
 
