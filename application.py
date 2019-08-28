@@ -3,6 +3,12 @@ import pyodbc
 
 app = Flask(__name__)
 
+server = 'dcdappserver.database.windows.net'
+database = 'dicodingdb'
+username = 'dicoding'
+password = 'Arya1234'
+driver= '{ODBC Driver 17 for SQL Server}'
+
 
 @app.route('/', methods=['GET'])
 def show():
@@ -109,8 +115,9 @@ def show():
         </script>
     </body>
     </HTML>""" 
+    connection = pyodbc.connect('DRIVER='+driver+';SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password)
 #    pyodbc.connect('DRIVER={FreeTDS};Server=dcdappserver.database.windows.net;Database=dicodingdb;UID=dicoding;PWD=Arya1234;TDS_Version=8.0;Port=1433;')
-     connection = pyodbc.connect('Driver={SQL Server};Server=dcdappserver.database.windows.net;Database=dicodingdb;uid=dicoding;pwd=Arya1234')
+#     connection = pyodbc.connect('Driver={SQL Server};Server=dcdappserver.database.windows.net;Database=dicodingdb;uid=dicoding;pwd=Arya1234')
 #     cursor = connection.cursor()
 #     cursor.execute("SELECT * FROM dbo.register")
 #     data = cursor.fetchall()  
